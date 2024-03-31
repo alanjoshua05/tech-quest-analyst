@@ -31,6 +31,7 @@ if sub:
             st.bar_chart(mis_df.set_index("Status"))
 
             # Display DataFrame of missing elements
+            st.subheader("The missing roll numbers")
             mis = [{"Roll No": roll_no} for roll_no in mis]
             mi_df = pd.DataFrame(mis)
             st.dataframe(mi_df)
