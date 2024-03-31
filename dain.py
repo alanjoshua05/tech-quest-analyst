@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import openpyxl
 
 st.title('Tech Quest Data Analyst')
 
@@ -32,7 +31,9 @@ if sub:
             st.bar_chart(mis_df.set_index("Status"))
 
             # Display DataFrame of missing elements
-            st.dataframe(mis_df)
+            mis = [{"Roll No": roll_no} for roll_no in mis]
+            mi_df = pd.DataFrame(mis)
+            st.dataframe(mi_df)
 
         except Exception as e:
             st.error(f"An error occurred: {e}")
