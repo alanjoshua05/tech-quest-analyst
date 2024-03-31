@@ -24,7 +24,7 @@ if sub:
             mis = std - substd
         
             # Create DataFrame from missing elements with student names
-            missing_data = [{"Status": "Submitted", "Count": len(std)}, {"Status": "Missing", "Count": len(mis)}]
+            missing_data = [{"Status": "Submitted", "Count": len(substd)}, {"Status": "Missing", "Count": len(mis)}]
             mis_df = pd.DataFrame(missing_data)
         
             # Display bar graph comparing lengths of 'mis' and 'std'
