@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 
 st.title('Tech Quest Data Analyst')
 
@@ -25,15 +24,11 @@ if sub:
             mis = std - substd
         
             # Create DataFrame from missing elements with student names
-            missing_data = [{"Roll No": roll_no} for roll_no in mis]
+            missing_data = [{"Status": "Submitted", "Count": len(std)}, {"Status": "Missing", "Count": len(mis)}]
             mis_df = pd.DataFrame(missing_data)
         
-            # Create pie chart comparing lengths of 'mis' and 'std'
-            fig, ax = plt.subplots()
-            ax.pie([len(std), len(mis)], labels=['Submited students', 'Missing students'], autopct='%1.1f%%')
-            ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-
-            st.pyplot(fig)
+            # Display bar graph comparing lengths of 'mis' and 'std'
+            st.bar_chart(mis_df.set_index("Status"))
 
             # Display DataFrame of missing elements
             st.dataframe(mis_df)
