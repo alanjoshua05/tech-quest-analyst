@@ -16,7 +16,9 @@ if sub:
         
             # Extract roll numbers from pre-existing data
             std = set(str(roll_no).lower() for roll_no in df1["Roll No"])
-        
+            date = df2["Timestamp"]
+            td = date[0]
+            st.write(f"Date : {str(td)[:-16]}")
             # Extract email prefixes from uploaded data
             if (a[0] == "e" or a[0]=="E"):
                 substd = set(str(email)[:-14] for email in df2[a])
