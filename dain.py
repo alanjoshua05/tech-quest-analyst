@@ -4,7 +4,7 @@ import pandas as pd
 st.title('Tech Quest Data Analyst')
 
 file = st.file_uploader("Upload an Excel file", type=["xlsx", "xls"])
-a = st.text_input("Select the column to be analysed (ex: E-mail)")
+a = st.text_input("Type the column to be analysed (ex: E-mail)")
 sub = st.button('Analyse')
 
 if sub:
