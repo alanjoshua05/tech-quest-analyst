@@ -33,7 +33,7 @@ if sub:
 
             # Display bar graph comparing lengths of 'mis' and 'std'
             st.bar_chart(mis_df.set_index("Status"))
-            st.write("Non-submitted students")
+            st.subheader("Non-submitted students")
             # Display DataFrame of missing elements with student names
             mi_df = pd.DataFrame({"Roll No": list(mis)})
             mi_df = mi_df.merge(df1[['Roll No', 'Student Name']], on='Roll No', how='left')
