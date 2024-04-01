@@ -18,7 +18,10 @@ if sub:
             std = set(str(roll_no).lower() for roll_no in df1["Roll No"])
         
             # Extract email prefixes from uploaded data
-            substd = set(str(email)[:-14] for email in df2[a])
+            if (a[0] == "e" or a[0]=="E"):
+                substd = set(str(email)[:-14] for email in df2[a])
+            else:
+                st.error("Enter the name of the E-mail column")
         
             # Find missing elements
             mis = std - substd
