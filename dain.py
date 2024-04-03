@@ -19,10 +19,9 @@ if sub:
             td = date[0]
             st.write(f"Date : {str(td)[:-16]}")
             # Extract email prefixes from uploaded data
-            if (a[0] == "e" or a[0] == "E"):
-                substd = set(str(email)[:-14].upper() for email in df2["Email Address"])
-            else:
-                st.error("Enter the name of the E-mail column")
+            
+            substd = set(str(email)[:-14].upper() for email in df2["Email Address"])
+            
             # Find missing elements
             mis = std - substd
 
