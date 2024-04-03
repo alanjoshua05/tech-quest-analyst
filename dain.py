@@ -33,6 +33,7 @@ if sub:
             st.bar_chart(mis_df.set_index("Status"))
             st.subheader("Non-submitted students")
             # Display DataFrame of missing elements with student names
+            date = df2["Timestamp"]
             mi_df = pd.DataFrame({"Roll No": list(mis)})
             mi_df = mi_df.merge(df1[['Roll No', 'Student Name']], on='Roll No', how='left')
             st.dataframe(mi_df)
