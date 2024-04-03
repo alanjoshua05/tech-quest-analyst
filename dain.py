@@ -4,7 +4,6 @@ import pandas as pd
 st.title('Tech Quest Data Analyst')
 
 file = st.file_uploader("Upload an Excel file", type=["xlsx", "xls"])
-a = st.text_input("Type the column to be analysed (ex: E-mail)")
 sub = st.button('Analyse')
 
 if sub:
@@ -21,7 +20,7 @@ if sub:
             st.write(f"Date : {str(td)[:-16]}")
             # Extract email prefixes from uploaded data
             if (a[0] == "e" or a[0] == "E"):
-                substd = set(str(email)[:-14].upper() for email in df2[a])
+                substd = set(str(email)[:-14].upper() for email in df2["Email Address"])
             else:
                 st.error("Enter the name of the E-mail column")
             # Find missing elements
